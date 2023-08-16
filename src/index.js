@@ -26,8 +26,13 @@ function removeExtraSpaces(str) {
 
 // Removes extra spaces and replaces spaces with the hyphen "-", and makes all characters lowercase.
 function kebobCase(str) {
-    const kebobbed = str.toLowerCase().split(' ').join('-');
+    const kebobbed = removeExtraSpaces(str).toLowerCase().split(' ').join('-');
     return kebobbed;
+}
+
+function snakeCase(str) {
+    const snaked = removeExtraSpaces(str).toLowerCase().split(' ').join('_');
+    return snaked;
 }
 
 
@@ -35,11 +40,14 @@ console.log(capitalize('hi laurel'));
 console.log(allCaps('hi laurel'));
 console.log(capitalizeWords('hi laurel'));
 console.log(removeExtraSpaces(' hi    laurel '));
-console.log(kebobCase('Hi Laurel'));
+console.log(kebobCase('Hi   Laurel'));
+console.log(snakeCase('  Hi   Laurel'));
 
 module.exports = {
     capitalize,
     allCaps,
     capitalizeWords,
-    removeExtraSpaces
+    removeExtraSpaces,
+    kebobCase,
+    snakeCase
 };
