@@ -46,6 +46,13 @@ function shift(str, number) {
     return last + first;
 }
 
+// This function should convert the given string to a hash tag. 
+function makeHashTag(str) {
+    const first = str.slice(0, number);
+    const last = str.slice(number);
+    return last + first;
+}
+
 
 console.log(capitalize('hi laurel'));
 console.log(allCaps('hi laurel'));
@@ -63,5 +70,6 @@ module.exports = {
     removeExtraSpaces,
     kebobCase,
     snakeCase,
-    camelCase
+    camelCase,
+    shift
 };
