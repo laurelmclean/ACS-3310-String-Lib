@@ -1,38 +1,42 @@
 // makes the first character of a given string uppercase.
 function capitalize(str) {
-    const firstLetter = str[0].toUpperCase();
-    const remainder = str.slice(1);
-    const capitalized = firstLetter.concat(remainder);
-    return capitalized;
+    return str[0].toUpperCase() + str.slice(1);
 }
 
 // makes all characters uppercase.
 function allCaps(str) {
-    const capitalized = str.toUpperCase();
-    return capitalized;
+    return str.toUpperCase();
 }
 
 // makes the first character of each word uppercase.
 function capitalizeWords(str) {
-    const array = str.split(' ').map((word) => capitalize(word)).join(' ');
-    return array;
+    return str.split(' ').map((word) => capitalize(word)).join(' ');
 }
 
 // Removes all spaces from the beginning and end of a String along with any extra spaces in the middle
 function removeExtraSpaces(str) {
-    const trimmedString = str.trim().split(' ').filter((word) => word != '').join(' ');
-    return trimmedString;
+    return str.trim().split(' ').filter((word) => word != '').join(' ');
 }
 
 // Removes extra spaces and replaces spaces with the hyphen "-", and makes all characters lowercase.
 function kebobCase(str) {
-    const kebobbed = removeExtraSpaces(str).toLowerCase().split(' ').join('-');
-    return kebobbed;
+    return removeExtraSpaces(str).toLowerCase().split(' ').join('-');
 }
 
+// Removes extra space and replaces spaces with an underscore "_", and makes all characters lowercase.
 function snakeCase(str) {
-    const snaked = removeExtraSpaces(str).toLowerCase().split(' ').join('_');
-    return snaked;
+    return removeExtraSpaces(str).toLowerCase().split(' ').join('_');
+}
+
+// Lowercases the first character of the first word. Then uppercases the first character of all other words, and removes all spaces.
+function camelCase(str) {
+    return removeExtraSpaces(str).split(' ').map((word, index) => {
+        if (index === 0) {
+            return word.toLowerCase();
+        } else {
+            return capitalize(word);
+        }
+    }).join('');
 }
 
 
@@ -42,6 +46,7 @@ console.log(capitalizeWords('hi laurel'));
 console.log(removeExtraSpaces(' hi    laurel '));
 console.log(kebobCase('Hi   Laurel'));
 console.log(snakeCase('  Hi   Laurel'));
+console.log(camelCase('  Hi there   Laurel'));
 
 module.exports = {
     capitalize,
@@ -49,5 +54,6 @@ module.exports = {
     capitalizeWords,
     removeExtraSpaces,
     kebobCase,
-    snakeCase
+    snakeCase,
+    camelCase
 };
