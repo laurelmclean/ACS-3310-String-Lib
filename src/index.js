@@ -39,6 +39,13 @@ function camelCase(str) {
     }).join('');
 }
 
+// this method will take the specified number of characters of a string and move to the end of a string
+function shift(str, number) {
+    const first = str.slice(0, number);
+    const last = str.slice(number);
+    return last + first;
+}
+
 
 console.log(capitalize('hi laurel'));
 console.log(allCaps('hi laurel'));
@@ -47,6 +54,7 @@ console.log(removeExtraSpaces(' hi    laurel '));
 console.log(kebobCase('Hi   Laurel'));
 console.log(snakeCase('  Hi   Laurel'));
 console.log(camelCase('  Hi there   Laurel'));
+console.log(shift('hi laurel', 4));
 
 module.exports = {
     capitalize,
