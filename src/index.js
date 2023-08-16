@@ -14,28 +14,32 @@ function allCaps(str) {
 
 // makes the first character of each word uppercase.
 function capitalizeWords(str) {
-    const array = str.split(' ');
-    const mappedArray = array.map((word) => capitalize(word));
-    const result = mappedArray.join(' ');
-    return result;
+    const array = str.split(' ').map((word) => capitalize(word)).join(' ');
+    return array;
 }
 
 // Removes all spaces from the beginning and end of a String along with any extra spaces in the middle
 function removeExtraSpaces(str) {
-    const trimmedString = str.trim();
-    const splitString = trimmedString.split(' ');
-    const filtered = splitString.filter((word) => word != '');
-    const result = filtered.join(' ');
-    return result;
+    const trimmedString = str.trim().split(' ').filter((word) => word != '').join(' ');
+    return trimmedString;
 }
+
+// Removes extra spaces and replaces spaces with the hyphen "-", and makes all characters lowercase.
+function kebobCase(str) {
+    const kebobbed = str.toLowerCase().split(' ').join('-');
+    return kebobbed;
+}
+
 
 console.log(capitalize('hi laurel'));
 console.log(allCaps('hi laurel'));
 console.log(capitalizeWords('hi laurel'));
 console.log(removeExtraSpaces(' hi    laurel '));
+console.log(kebobCase('Hi Laurel'));
 
 module.exports = {
     capitalize,
     allCaps,
-    capitalizeWords
+    capitalizeWords,
+    removeExtraSpaces
 };
