@@ -5,6 +5,14 @@ function capitalize(str) {
     return capitalized
 }
 
+function allCaps(str) {
+    const capitalized = str.toUpperCase()
+    return capitalized
+}
+
+console.log(capitalize('hi laurel'))
+console.log(allCaps('hi laurel'))
+
 module.exports = {
     capitalize
 };
