@@ -48,9 +48,18 @@ function shift(str, number) {
 
 // This function should convert the given string to a hash tag. 
 function makeHashTag(str) {
-    const first = str.slice(0, number);
-    const last = str.slice(number);
-    return last + first;
+    let array = str.toLowerCase().split(" ");
+    console.log(array)
+    if (array.length > 3) {
+        array = array.sort((a, b) => b.length - a.length).slice(0, 3);
+        console.log(array)
+    }
+    return array.map(i => '#' + i);
+}
+
+// Returns true if the given string is empty or contains only whitespace
+function isEmpty(str) {
+
 }
 
 
@@ -62,6 +71,7 @@ console.log(kebobCase('Hi   Laurel'));
 console.log(snakeCase('  Hi   Laurel'));
 console.log(camelCase('  Hi there   Laurel'));
 console.log(shift('hi laurel', 4));
+console.log(makeHashTag('how are you doing today'));
 
 module.exports = {
     capitalize,
@@ -71,5 +81,6 @@ module.exports = {
     kebobCase,
     snakeCase,
     camelCase,
-    shift
+    shift,
+    makeHashTag
 };
