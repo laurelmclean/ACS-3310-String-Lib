@@ -59,7 +59,17 @@ function makeHashTag(str) {
 
 // Returns true if the given string is empty or contains only whitespace
 function isEmpty(str) {
-
+    let trimmed = str.trim();
+    if (trimmed === "") {
+        console.log('true')
+        return true;
+    }
+    for (let char of trimmed) {
+        if (char !== '\n' || '\r' || '\t') {
+            return false;
+        }
+    }
+    return true;
 }
 
 
@@ -72,6 +82,7 @@ console.log(snakeCase('  Hi   Laurel'));
 console.log(camelCase('  Hi there   Laurel'));
 console.log(shift('hi laurel', 4));
 console.log(makeHashTag('how are you doing today'));
+console.log(isEmpty('	'));
 
 module.exports = {
     capitalize,
@@ -82,5 +93,6 @@ module.exports = {
     snakeCase,
     camelCase,
     shift,
-    makeHashTag
+    makeHashTag,
+    isEmpty
 };
