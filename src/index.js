@@ -1,6 +1,6 @@
 // makes the first character of a given string uppercase.
 function capitalize(str) {
-    return str[0].toUpperCase() + str.slice(1);
+    return str[0].toUpperCase() + str.slice(1).toLowerCase();
 }
 
 // makes all characters uppercase.
@@ -11,6 +11,23 @@ function allCaps(str) {
 // makes the first character of each word uppercase.
 function capitalizeWords(str) {
     return str.split(' ').map((word) => capitalize(word)).join(' ');
+}
+
+// makes the first character of each word uppercase except the, in, a, an, and, but, for, at, by, from.
+function capitalizeHeadlines(str) {
+    const lowercaseWords = ['the', 'in', 'a', 'an', 'and', 'but', 'for', 'at', 'by', 'from'];
+
+    const words = str.split(' ');
+
+    words[0] = capitalize(words[0]);
+
+    for (let i = 1; i < words.length; i++) {
+        if (!lowercaseWords.includes(words[i])) {
+            words[i] = capitalize(words[i]);
+        }
+    }
+
+    return words.join(' ');
 }
 
 // Removes all spaces from the beginning and end of a String along with any extra spaces in the middle
@@ -40,7 +57,7 @@ function camelCase(str) {
 }
 
 // this method will take the specified number of characters of a string and move to the end of a string
-function shift(str, number) {
+function shift(str, number = 1) {
     const first = str.slice(0, number);
     const last = str.slice(number);
     return last + first;
@@ -61,7 +78,6 @@ function makeHashTag(str) {
 function isEmpty(str) {
     let trimmed = str.trim();
     if (trimmed === "") {
-        console.log('true')
         return true;
     }
     for (let char of trimmed) {
@@ -72,22 +88,11 @@ function isEmpty(str) {
     return true;
 }
 
-
-console.log(capitalize('hi laurel'));
-console.log(allCaps('hi laurel'));
-console.log(capitalizeWords('hi laurel'));
-console.log(removeExtraSpaces(' hi    laurel '));
-console.log(kebobCase('Hi   Laurel'));
-console.log(snakeCase('  Hi   Laurel'));
-console.log(camelCase('  Hi there   Laurel'));
-console.log(shift('hi laurel', 4));
-console.log(makeHashTag('how are you doing today'));
-console.log(isEmpty('	'));
-
 module.exports = {
     capitalize,
     allCaps,
     capitalizeWords,
+    capitalizeHeadlines,
     removeExtraSpaces,
     kebobCase,
     snakeCase,

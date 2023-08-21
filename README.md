@@ -31,6 +31,15 @@ The `capitalizeWords` function capitalizes the first character of each word in t
 console.log(capitalizeWords('hello world')); // Returns: "Hello World"
 ```
 
+### capitalizeHeadlines(str)
+
+The `capitalizeHeadlines` function capitalizes all of the words except the words: the, in, a, an, and, but, for, at, by, from unless one of these words is the first word of the string.
+
+**Example:**
+```javascript
+console.log(capitalizeHeadlines('the best dog a boy could have')); // Returns: "The Best Dog a Boy Could Have"
+```
+
 ### removeExtraSpaces(str)
 
 `removeExtraSpaces` removes any leading, trailing, or extra spaces within the input string, ensuring that there is only one space between words.
