@@ -1,4 +1,12 @@
-# String Manipulation Utility Functions
+# Stringlib.js
+
+[![npm version](https://img.shields.io/npm/v/emojified.js.svg)](https://www.npmjs.com/package/stringlib.js)
+
+[![npm downloads](https://img.shields.io/npm/dt/emojified.js.svg)](https://www.npmjs.com/package/stringlib.js)
+
+[NPM Package](https://www.npmjs.com/package/stringlib.js)
+
+## Description:
 
 This repository contains a collection of utility functions for manipulating strings in various formats. These functions are designed to make it easier to work with strings by performing actions such as capitalization, removing spaces, and transforming strings into different naming conventions.
 
