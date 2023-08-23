@@ -2,6 +2,28 @@
 
 This repository contains a collection of utility functions for manipulating strings in various formats. These functions are designed to make it easier to work with strings by performing actions such as capitalization, removing spaces, and transforming strings into different naming conventions.
 
+## Installation:
+```
+npm install stringlib.js
+```
+
+## Usage:
+```javascript
+const { 
+  capitalize,
+  allCaps,
+  capitalizeWords,
+  capitalizeHeadlines,
+  removeExtraSpaces,
+  kebobCase,
+  snakeCase,
+  camelCase,
+  shift,
+  makeHashTag,
+  isEmpty 
+  } = require('stringlib.js');
+```
+
 ## Functions
 
 ### capitalize(str)

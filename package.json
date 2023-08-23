@@ -1,15 +1,28 @@
 {
-  "name": "string-lib",
-  "version": "1.0.0",
-  "description": "",
+  "name": "stringlib.js",
+  "version": "1.0.1",
+  "description": "Utility functions for manipulating strings in various formats",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laurelmclean/ACS-3310-String-Lib.git "
+  },
+  "keywords": [
+    "strings"
+  ],
+  "author": "Laurel McLean",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.47.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.1",
     "jest": "^29.6.3"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/laurelmclean/ACS-3310-String-Lib/issues"
+  },
+  "homepage": "https://github.com/laurelmclean/ACS-3310-String-Lib#readme"
 }
