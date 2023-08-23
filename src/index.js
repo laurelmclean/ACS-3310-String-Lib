@@ -90,16 +90,14 @@ function isEmpty(str) {
   return true;
 }
 
-module.exports = {
-  capitalize,
-  allCaps,
-  capitalizeWords,
-  capitalizeHeadlines,
-  removeExtraSpaces,
-  kebobCase,
-  snakeCase,
-  camelCase,
-  shift,
-  makeHashTag,
-  isEmpty,
-};
+module.exports.capitalize = capitalize;
+module.exports.allCaps = allCaps;
+module.exports.capitalizeWords = capitalizeWords;
+module.exports.capitalizeHeadlines = capitalizeHeadlines;
+module.exports.removeExtraSpaces = removeExtraSpaces;
+module.exports.kebobCase = kebobCase;
+module.exports.snakeCase = snakeCase;
+module.exports.camelCase = camelCase;
+module.exports.shift = shift;
+module.exports.makeHashTag = makeHashTag;
+module.exports.isEmpty = isEmpty;
